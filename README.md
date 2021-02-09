@@ -8,3 +8,4 @@ A slack bot to tag managers on interrupt duty
 Action Items
 1. Alex - Research on Slack SDK for Java (https://slack.dev/java-slack-sdk/guides/web-api-basics)
 2. Yugam - Research Node.js and JavaScript libraries for Slack API (https://www.freecodecamp.org/learn)
+3. Yugam - Add Alex as Maintainer
