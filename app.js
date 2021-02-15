@@ -15,7 +15,15 @@ slackEvents.on('app_mention', (event) => {
     parseData.parseGoogleSheet().then((result) => {
       parsedData = result;
       console.log(parsedData[isValidEvent.dayName].slackID);
-
+      // Check if the message is part of a thread. Existence of thread_ts indicates that the received message is part of a thread.
+      if(event.thread_ts){
+        // Threaded reply - Different thread_ts and ts value indicates that the message is a reply. The condition is true if user mentions the app again in the same thread.
+        if(event.thread_ts !== event.ts){
+          sendMessage(event.channel, event.thread_ts, parsedData[isValidEvent.dayName].slackID);
+        }
+      }else {
+        sendMessage(event.channel, event.ts, parsedData[isValidEvent.dayName].slackID);
+      }
     });
   }else {
     // Send no interrupt available message in the response
@@ -31,3 +39,21 @@ slackEvents.start(port).then(() => {
   // Listening on path '/slack/events' by default
   console.log(`server listening on port ${port}`);
 });
+
+async function sendMessage(channelID, timestamp, slackID){
+  const { WebClient } = require('@slack/web-api');
+  const client = new WebClient(process.env.SLACK_TOKEN);
+  try {
+    // Call the chat.postMessage method using the built-in WebClient
+    const result = await client.chat.postMessage({
+      // The token you used to initialize your app
+      token: process.env.SLACK_TOKEN,
+      channel: channelID,
+      thread_ts: timestamp,
+      text: `<@${slackID}>`
+    });
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
