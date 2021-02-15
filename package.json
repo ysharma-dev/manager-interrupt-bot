@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ysharma-dev/manager-interrupt-bot#readme",
   "dependencies": {
-    "@slack/events-api": "^3.0.0"
+    "@slack/events-api": "^3.0.0",
+    "@slack/web-api": "^6.0.0"
   }
 }
