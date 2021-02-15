@@ -1,0 +1,22 @@
+{
+  "name": "manager-interrupt-bot",
+  "version": "1.0.0",
+  "description": "Slack App that tags Managers (on interrupt duty) in threads",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysharma-dev/manager-interrupt-bot.git"
+  },
+  "author": "Yugam Sharma <yugam.sharma@yahoo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ysharma-dev/manager-interrupt-bot/issues"
+  },
+  "homepage": "https://github.com/ysharma-dev/manager-interrupt-bot#readme",
+  "dependencies": {
+    "@slack/events-api": "^3.0.0"
+  }
+}
