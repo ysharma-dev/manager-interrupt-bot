@@ -11,3 +11,6 @@ Action Items
 2. Alex - Read [Slack SDK for Java](https://slack.dev/java-slack-sdk/)
 3. Yugam - Read [Node Slack SDK](https://slack.dev/node-slack-sdk/) and [tutorials](https://www.freecodecamp.org/learn) from freeCodeCamp
 4. Alex & Yugam - Implement task(s) from the Tasks section above either using Slack SDK for Java or Node 
+
+
+[Playbook and notes to write a Java Slack App](../playbook.md)
