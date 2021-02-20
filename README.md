@@ -13,4 +13,4 @@ Action Items
 4. Alex & Yugam - Implement task(s) from the Tasks section above either using Slack SDK for Java or Node 
 
 
-[Playbook and notes to write a Java Slack App](../playbook.md)
+[Playbook and notes to write a Java Slack App](playbook.md)
