@@ -14,3 +14,19 @@ Action Items
 
 
 [Playbook and notes to write a Java Slack App](playbook.md)
+
+
+manifest.yml:
+
+---
+applications:
+- name: manager-interrupt-bot
+  instances: 1
+  buildpacks:
+    - java_buildpack_offline
+  path: ./target/interrupt-bot-1.0.0.jar
+  env:
+    SLACK_TOKEN: ""
+    SLACK_SIGNING_SECRET: ""
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    APP_PORT: 8080
