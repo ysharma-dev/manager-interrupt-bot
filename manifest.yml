@@ -6,7 +6,7 @@ applications:
     - java_buildpack_offline
   path: ./target/interrupt-bot-1.0.0.jar
   env:
-    SLACK_TOKEN: ""
-    SLACK_SIGNING_SECRET: ""
+    SLACK_TOKEN: "xoxb-2154537752-1716358010932-g5R49m4Y3V5fWvPUdPrdKRjM"
+    SLACK_SIGNING_SECRET: "ba825485fcfe0d2980a7f9287c61a84a"
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
     APP_PORT: 8080
