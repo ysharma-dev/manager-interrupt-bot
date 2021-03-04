@@ -67,15 +67,17 @@ config.setSigningSecret(System.getenv("SLACK_SIGNING_SECRET"));
 ```
 ---
 applications:
-- name: interruptbot
+- name: manager-interrupt-app
   instances: 1
   buildpacks: 
     - java_buildpack_offline
-  path: <path-relative-or-absolute>
+  path: ./target/interrupt-bot-1.0.0.jar
   env:
     SLACK_TOKEN: "<Bot User OAuth Access Token>"
     SLACK_SIGNING_SECRET: "<App's Signing Secret>"
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}'
     APP_PORT: 8080
+    MANAGER_JSON:'{ "a1":"slackid1", "a2":"slackid2", "a3":"slackid3", "a4":"slackid4", "a5":"slackid5" }'
+    JSON_URL: <url-that-gets-you-some-json-data>
 ```
- 
+> Note: MANAGER_JSON is how we consume Slack IDs of users that will be pinged & JSON_URL is how we gather JSON data from a Google spreadsheet to parse within the code. These are highly coupled with parsing logic in the source code. You must change the parsing logic as per your use case.
