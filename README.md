@@ -1,16 +1,19 @@
-# manager-interrupt-bot
-A slack bot to tag managers on interrupt duty
+# Manager Interrupt Slack App
+A simple slack app to tag managers on interrupt duty  
+<img src="images/slack_logo.png" width="100">  
+----
 
-Tasks
-1. Figure out how to read data from Google sheet in JSON or CSV format.
-2. Parse the JSON or CSV response
-3. Send a message to test slack channel to print name of Managers.
+The app first verifies that the date and time are within the valid interrupt window. If the date and time are invalid, the app responds with a message telling the user that there is currently no manager interrupt on duty.  
+If the time and date are valid, the app looks up the name of the manager corresponding to the current date on the schedule spreadsheet.  
+If a non-manager input is under the “Interrupt” column in the spreadsheet (i.e. “Company Holiday”), the app responds with a message telling the user that there is currently no manager interrupt on duty.  
+If there is a manager name listed, the app tags the manager’s Slack ID.
 
-Action Items  
-1. Yugam - Add Alex as Collaborator to this repository :white_check_mark:
-2. Alex - Read [Slack SDK for Java](https://slack.dev/java-slack-sdk/)
-3. Yugam - Read [Node Slack SDK](https://slack.dev/node-slack-sdk/) and [tutorials](https://www.freecodecamp.org/learn) from freeCodeCamp
-4. Alex & Yugam - Implement task(s) from the Tasks section above either using Slack SDK for Java or Node 
+----  
 
+## To start building on top of this code, see our playbooks
 
-[Playbook and notes to write a Java Slack App](playbook.md)
+> Note: To be compliant with [12-factor principles](https://12factor.net/), we are learning to apply these principles for this project and will be making changes accordingly. Currently, all the configurations that we need for the project to work (For example, Slack credentials, Application port, JRE details, etc.) are consumed using a Cloud foundry application manifest. 
+
+    
+- [Playbook and notes to write a Java Slack App](playbook_java.md)
+- (__In Progress__) [Playbook and notes to write a Nodejs Slack App](playbook_nodejs.md)
