@@ -47,7 +47,7 @@ public class ScheduleUtil {
         initializeManagers();
 
         // Get current time and date in UTC
-        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
 		Date date = new Date();
         
         // Checks if current date and time is within window
@@ -115,7 +115,7 @@ public class ScheduleUtil {
 		// Check hour (valid = 5pm - 10pm UTC)
 		int hour = getHourNum((GregorianCalendar)calendar);
 		
-		if (hour < 17 || hour >= 22)
+		if (hour < 12 || hour >= 17)
 			return false;
 		
 		return true;
